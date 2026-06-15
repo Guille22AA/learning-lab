@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Globos</title>
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- === HUD === -->
+    <div id="hud">
+      <span>Puntos: <strong id="cnt-puntos">0</strong></span>
+      <span>Globos: <strong id="cnt-globos">0/20</strong></span>
+      <button id="btn-pausa">Pausar</button>
+      <button id="btn-reset">Reiniciar</button>
+    </div>
+
+    <!-- === ÁREA DE JUEGO === -->
+    <div id="contenedor"></div>
+
+    <!-- === PANTALLA DE FIN === -->
+    <div id="overlay">
+      <div id="overlay-titulo">¡FIN!</div>
+      <div id="overlay-sub">Explotaste todos los globos</div>
+      <div id="overlay-puntos-finales"></div>
+      <button id="btn-nuevo">Jugar de nuevo</button>
+    </div>
+
+    <!-- Script externo al final del body para que el HTML ya esté listo cuando se ejecute -->
+    <script src="app.js"></script>
+  </body>
+</html>

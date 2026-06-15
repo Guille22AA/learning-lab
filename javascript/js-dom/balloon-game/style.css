@@ -1,0 +1,88 @@
+/* RESET Y BASE*/
+
+/* Sin márgenes y sin barra de scroll en la página */
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+
+/* HUD */
+
+#hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  box-sizing: border-box; /* el padding no aumenta el ancho total */
+  z-index: 100;           /* queda por encima del área de juego */
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+
+
+/* ÁREA DE JUEGO */
+
+#contenedor {
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* los globos se posicionan respecto a este div */
+}
+
+
+/* GLOBOS */
+
+.globo {
+  border-radius: 50%;      
+  position: absolute;      /* se posiciona con left/top desde JS */
+  cursor: crosshair;
+
+  /* Preparamos transition para que la animación de explosión sea suave */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.globo:hover {
+  cursor: pointer;
+}
+
+/* Clase que se añade al hacer clic para animar la explosión:
+   el globo se agranda y se desvanece antes de eliminarse del DOM */
+.exploding {
+  transform: scale(1.5) !important; /* !important para sobreescribir el transform inline si lo hubiera */
+  opacity: 0 !important;
+}
+
+
+/* PANTALLA DE FIN (overlay) */
+
+#overlay {
+  position: fixed;
+  inset: 0; /* shorthand de top/right/bottom/left: 0 */
+  display: none; /* oculto por defecto; JS lo pone a "flex" cuando acaba el juego */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  z-index: 200; /* por encima del HUD y de los globos */
+}
+
+#overlay-titulo {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+#overlay-puntos-finales {
+  font-size: 22px;
+  color: #2a7d4f;
+  font-weight: bold;
+}
+
+#btn-nuevo {
+  margin-top: 12px;
+}
