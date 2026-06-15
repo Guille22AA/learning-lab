@@ -37,6 +37,29 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Java
+*.class
+target/
+
+# env
+.env
+
 # Dependency directories
 node_modules/
 jspm_packages/
